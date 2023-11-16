@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>SMS settings</h1>
+        <div class='container'>
+            <div>
+                <h1>SMS Detail</h1>
+                <p>{{ sms_object.name }} - {{ sms_object.text_body }}</p>
+                <p>Is Sent: {{ sms_object.is_sent }}</p>
+                <p>Delivered: {{ sms_object.delivered }}</p>
+                <p>Not Delivered: {{ sms_object.not_delivered }}</p>
+            </div>
+            
+        </div>
+
+{% endblock content %}

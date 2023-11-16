@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<h1>SMS List</h1>
+<div>
+    <h2>Create message</h2>
+    <form method="post" action="{% url 'send-sms' %}">
+        {% csrf_token %}
+        <label for="name">Message name</label>
+        <input type="text" name="name" required><br>
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" name="phone_number" required><br>
+
+        <label for="message">Message:</label>
+        <textarea name="message" required></textarea><br>
+
+        <button type="submit">Send SMS</button>
+    </form>
+</div>
+        
+{% endblock content %}

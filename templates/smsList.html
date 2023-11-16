@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+This is index title
+{% endblock title %}
+
+{% block content %}
+<h1>SMS List</h1>
+        <a href="{% url 'send-sms' %}">Send new sms</a>
+        <ul class="list-group">
+        {% for sms in sms_list %}
+            <li class="list-group-item list-group-item-primary"><a href="{% url 'sms-detail' id=sms.id %}">{{sms.name}}</a></li>
+        {% endfor %}
+        </ul>
+{% endblock content %}
